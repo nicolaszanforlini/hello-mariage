@@ -1,4 +1,4 @@
-package com.example.hello_mariage.View;
+package com.example.hello_mariage.View.Activity;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
