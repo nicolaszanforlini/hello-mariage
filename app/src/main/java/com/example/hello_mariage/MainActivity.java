@@ -1,8 +1,15 @@
 package com.example.hello_mariage;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -24,6 +31,43 @@ public class MainActivity extends AppCompatActivity {
         // end principal buttons
 
     }
+
+    // menu items application create in activity
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    // menu items clicked
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+        switch (id){
+            case R.id.web:
+                Toast.makeText(getApplicationContext(), "site web", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.contact:
+                Toast.makeText(getApplicationContext(), "contact", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.cgu:
+                Toast.makeText(getApplicationContext(), "politique de confidentialité", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.langues:
+                Toast.makeText(getApplicationContext(), "langues", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.version:
+                Toast.makeText(getApplicationContext(), "version", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    // end menu items
+
 
     // listener menu principal button
     private final View.OnClickListener btnAccueilListener = new View.OnClickListener() {
@@ -47,5 +91,7 @@ public class MainActivity extends AppCompatActivity {
         }
     };
     // end listener menu principal button
+
+
 
 }
