@@ -78,7 +78,7 @@ public class ThemesFragment extends Fragment {
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getActivity(), l.get(position), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "theme cliced", Toast.LENGTH_SHORT).show();
                 //getActivity().getSupportFragmentManager().beginTransaction().
                 //        remove(getActivity().getSupportFragmentManager().findFragmentById(R.id.frame)).commit();
                 //AccueilFragment frag = new AccueilFragment();
@@ -107,7 +107,6 @@ public class ThemesFragment extends Fragment {
         return l;
     }
 
-    
     /**
      * this method will deleted when we have API's data
      * @return l2 list of images's url
