@@ -59,15 +59,15 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="ButtonStyle,MissingConstraints" />
 
-        <FrameLayout
-            android:id="@+id/frame"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="85dp"
-            tools:ignore="UselessLeaf">
-
-        </FrameLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="85dp"
+        tools:ignore="UselessLeaf">
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
