@@ -78,7 +78,7 @@ public class ThemesFragment extends Fragment {
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getActivity(), "theme cliced", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "theme cliced ", Toast.LENGTH_SHORT).show();
                 //getActivity().getSupportFragmentManager().beginTransaction().
                 //        remove(getActivity().getSupportFragmentManager().findFragmentById(R.id.frame)).commit();
                 //AccueilFragment frag = new AccueilFragment();
