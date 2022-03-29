@@ -107,6 +107,7 @@ public class ThemesFragment extends Fragment {
         return l;
     }
 
+    
     /**
      * this method will deleted when we have API's data
      * @return l2 list of images's url
