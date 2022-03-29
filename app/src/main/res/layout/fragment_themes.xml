@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.Fragment.ThemesFragment">
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/txtThemesDisponibles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Themes disponibles"
+        android:textColor="@color/rose_bonbon"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:gravity="center"
+        />
+
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="auto_fit"
+        android:id="@+id/gridThemesDisponible"
+        android:layout_below="@+id/txtThemesDisponibles"
+        android:layout_marginTop="15dp"
+        >
+
+    </GridView>
+
+</RelativeLayout>
