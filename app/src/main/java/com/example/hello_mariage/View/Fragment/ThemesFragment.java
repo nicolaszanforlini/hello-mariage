@@ -12,6 +12,7 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import com.example.hello_mariage.Controler.Adapter.AdapterThemes;
+import com.example.hello_mariage.Model.ThemesModel;
 import com.example.hello_mariage.R;
 
 import java.util.ArrayList;
@@ -22,6 +23,8 @@ import java.util.ArrayList;
  * create an instance of this fragment.
  */
 public class ThemesFragment extends Fragment {
+
+    private ThemesModel currentThemes = null;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -70,8 +73,13 @@ public class ThemesFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_themes, container, false);
         GridView grid = rootView.findViewById(R.id.gridThemesDisponible);
+        currentThemes = new ThemesModel();
 
-        AdapterThemes adt = new AdapterThemes(getActivity(), initDataTitle(), initDataUrl());
+        //TODO : Connect with API data
+        currentThemes.setListThemes(initDataTitle());
+        currentThemes.setListUrlImg(initDataUrl());
+
+        AdapterThemes adt = new AdapterThemes(getActivity(), currentThemes.getListThemes(), currentThemes.getListUrlImg());
         grid.setAdapter(adt);
 
         // select theme
@@ -93,7 +101,7 @@ public class ThemesFragment extends Fragment {
      * this method will deleted when we have API's data
      * @return l list of title's themes
      */
-    public ArrayList initDataTitle() {
+    public ArrayList<String> initDataTitle() {
         ArrayList<String> l = new ArrayList<>();
         l.add("title 1");
         l.add("title 2");
@@ -111,7 +119,7 @@ public class ThemesFragment extends Fragment {
      * this method will deleted when we have API's data
      * @return l2 list of images's url
      */
-    public ArrayList initDataUrl() {
+    public ArrayList<String> initDataUrl() {
         ArrayList<String>l2 = new ArrayList<>();
         l2.add("https://st4.depositphotos.com/20524830/26271/i/1600/depositphotos_262716896-stock-photo-computer-generated-image-website-construction.jpg");
         l2.add("https://st3.depositphotos.com/1008939/12603/i/950/depositphotos_126032722-stock-photo-roaring-singing-woman.jpg");
