@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu   xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/action_more"
+        android:icon="@drawable/ic_baseline_items"
+        android:title=""
+        app:showAsAction="always">
+        <menu>
+            <item android:id="@+id/web"
+                android:title="site officiel"
+                android:icon="@drawable/ic_baseline_web" />
+            <item android:id="@+id/contact"
+                android:title="contact"
+                android:icon="@drawable/ic_baseline_mail" />
+            <item android:id="@+id/cgu"
+                android:title="politique de confidentialité"
+                android:icon="@drawable/ic_baseline_cgu" />
+            <item android:id="@+id/langues"
+                android:title="langues"
+                android:icon="@drawable/ic_baseline_language" />
+            <item android:id="@+id/version"
+                android:title="version"
+                android:icon="@drawable/ic_baseline_info" />
+        </menu>
+    </item>
+</menu>
