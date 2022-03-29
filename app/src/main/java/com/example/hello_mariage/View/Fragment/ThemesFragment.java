@@ -66,34 +66,12 @@ public class ThemesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // data test ====================================
-        ArrayList<String> l = new ArrayList<>();
-        l.add("title 1");
-        l.add("title 2");
-        l.add("title 3");
-        l.add("title 4");
-        l.add("title 5");
-        l.add("title 6");
-        l.add("title 7");
-        l.add("title 8");
-        l.add("title 9");
 
-        ArrayList<String>l2 = new ArrayList<>();
-        l2.add("https://st4.depositphotos.com/20524830/26271/i/1600/depositphotos_262716896-stock-photo-computer-generated-image-website-construction.jpg");
-        l2.add("https://st3.depositphotos.com/1008939/12603/i/950/depositphotos_126032722-stock-photo-roaring-singing-woman.jpg");
-        l2.add("https://st3.depositphotos.com/1008939/12603/i/950/depositphotos_126032722-stock-photo-roaring-singing-woman.jpg");
-        l2.add("https://st3.depositphotos.com/1008939/12603/i/950/depositphotos_126032722-stock-photo-roaring-singing-woman.jpg");
-        l2.add("https://st4.depositphotos.com/20524830/26271/i/1600/depositphotos_262716896-stock-photo-computer-generated-image-website-construction.jpg");
-        l2.add("https://st3.depositphotos.com/1008939/12603/i/950/depositphotos_126032722-stock-photo-roaring-singing-woman.jpg");
-        l2.add("https://st3.depositphotos.com/1008939/12603/i/950/depositphotos_126032722-stock-photo-roaring-singing-woman.jpg");
-        l2.add("https://st4.depositphotos.com/20524830/26271/i/1600/depositphotos_262716896-stock-photo-computer-generated-image-website-construction.jpg");
-        l2.add("https://st3.depositphotos.com/1008939/12603/i/950/depositphotos_126032722-stock-photo-roaring-singing-woman.jpg");
-        // =================================================
 
         View rootView = inflater.inflate(R.layout.fragment_themes, container, false);
         GridView grid = rootView.findViewById(R.id.gridThemesDisponible);
 
-        AdapterThemes adt = new AdapterThemes(getActivity(), l, l2);
+        AdapterThemes adt = new AdapterThemes(getActivity(), initDataTitle(), initDataUrl());
         grid.setAdapter(adt);
 
         // select theme
@@ -110,4 +88,41 @@ public class ThemesFragment extends Fragment {
 
         return rootView;
     }
+
+    /**
+     * this method will deleted when we have API's data
+     * @return l list of title's themes
+     */
+    public ArrayList initDataTitle() {
+        ArrayList<String> l = new ArrayList<>();
+        l.add("title 1");
+        l.add("title 2");
+        l.add("title 3");
+        l.add("title 4");
+        l.add("title 5");
+        l.add("title 6");
+        l.add("title 7");
+        l.add("title 8");
+        l.add("title 9");
+        return l;
+    }
+
+    /**
+     * this method will deleted when we have API's data
+     * @return l2 list of images's url
+     */
+    public ArrayList initDataUrl() {
+        ArrayList<String>l2 = new ArrayList<>();
+        l2.add("https://st4.depositphotos.com/20524830/26271/i/1600/depositphotos_262716896-stock-photo-computer-generated-image-website-construction.jpg");
+        l2.add("https://st3.depositphotos.com/1008939/12603/i/950/depositphotos_126032722-stock-photo-roaring-singing-woman.jpg");
+        l2.add("https://st3.depositphotos.com/1008939/12603/i/950/depositphotos_126032722-stock-photo-roaring-singing-woman.jpg");
+        l2.add("https://st3.depositphotos.com/1008939/12603/i/950/depositphotos_126032722-stock-photo-roaring-singing-woman.jpg");
+        l2.add("https://st4.depositphotos.com/20524830/26271/i/1600/depositphotos_262716896-stock-photo-computer-generated-image-website-construction.jpg");
+        l2.add("https://st3.depositphotos.com/1008939/12603/i/950/depositphotos_126032722-stock-photo-roaring-singing-woman.jpg");
+        l2.add("https://st3.depositphotos.com/1008939/12603/i/950/depositphotos_126032722-stock-photo-roaring-singing-woman.jpg");
+        l2.add("https://st4.depositphotos.com/20524830/26271/i/1600/depositphotos_262716896-stock-photo-computer-generated-image-website-construction.jpg");
+        l2.add("https://st3.depositphotos.com/1008939/12603/i/950/depositphotos_126032722-stock-photo-roaring-singing-woman.jpg");
+        return l2;
+    }
+
 }
