@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.Toast;
 import com.example.hello_mariage.R;
 import com.example.hello_mariage.View.Fragment.AccueilFragment;
+import com.example.hello_mariage.View.Fragment.ThemesFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -84,7 +85,10 @@ public class MainActivity extends AppCompatActivity {
     private final View.OnClickListener btnThemesListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Toast.makeText(getApplicationContext(), "bouton theme", Toast.LENGTH_SHORT).show();
+            getSupportFragmentManager().beginTransaction().
+                    remove(getSupportFragmentManager().findFragmentById(R.id.frame)).commit();
+            ThemesFragment frag = new ThemesFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame, frag).commit();
         }
     };
 
