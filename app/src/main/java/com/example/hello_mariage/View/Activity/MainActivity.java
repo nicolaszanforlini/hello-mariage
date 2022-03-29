@@ -1,11 +1,7 @@
 package com.example.hello_mariage.View.Activity;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -13,8 +9,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-
 import com.example.hello_mariage.R;
+import com.example.hello_mariage.View.Fragment.AccueilFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
         btnThemes.setOnClickListener(btnThemesListener);
         btnDevis.setOnClickListener(btnDevisListener);
         // end principal buttons
+
+        AccueilFragment frag = new AccueilFragment();
+        getSupportFragmentManager().beginTransaction().addToBackStack(null).add(R.id.frame, frag).commit();
 
     }
 
@@ -75,7 +74,10 @@ public class MainActivity extends AppCompatActivity {
     private final View.OnClickListener btnAccueilListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Toast.makeText(getApplicationContext(), "bouton accueil", Toast.LENGTH_SHORT).show();
+            getSupportFragmentManager().beginTransaction().
+                    remove(getSupportFragmentManager().findFragmentById(R.id.frame)).commit();
+            AccueilFragment frag = new AccueilFragment();
+            getSupportFragmentManager().beginTransaction().add(R.id.frame, frag).commit();
         }
     };
 
