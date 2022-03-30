@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         // end principal buttons
 
         AccueilFragment frag = new AccueilFragment();
-        getSupportFragmentManager().beginTransaction().addToBackStack(null).add(R.id.frame, frag).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.frame, frag).commit();
 
     }
 
